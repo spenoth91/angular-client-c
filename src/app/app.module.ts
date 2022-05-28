@@ -10,8 +10,12 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './account/component/login/login.component';
 import { RegisterComponent } from './account/component/register/register.component';
 import { StuffListComponent } from './users/components/stuff-list/stuff-list.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -22,14 +26,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegisterComponent,
     StuffListComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    TableModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        TableModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

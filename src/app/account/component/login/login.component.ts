@@ -5,6 +5,9 @@ import {AccountService} from '../services/account.service';
 
 @Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
+  public loginValid = true;
+  public email = '';
+  public password = '';
   form: FormGroup;
 
   constructor(
@@ -25,6 +28,7 @@ export class LoginComponent implements OnInit {
   get f() { return this.form.controls; }
 
   onSubmit() {
+    this.loginValid = true;
 
     // stop here if form is invalid
     if (this.form.invalid) {
@@ -35,7 +39,9 @@ export class LoginComponent implements OnInit {
       .subscribe((result) => {
         if (result) {
           this.router.navigate(['/']);
+          this.loginValid = true;
         }
+        this.loginValid = false;
       });
   }
 }
