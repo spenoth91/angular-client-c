@@ -6,6 +6,7 @@ import {AuthGuard} from './account/component/services/auth.guard';
 import {LoginComponent} from './account/component/login/login.component';
 import {RegisterComponent} from './account/component/register/register.component';
 import {StuffListComponent} from './users/components/stuff-list/stuff-list.component';
+import {EmployeeListComponent} from './employees/components/employee-list/employee-list.component';
 
 const routes: Routes = [
   {path: 'users', component: UserListComponent, canActivate: [AuthGuard]},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: '', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'stuff', component: StuffListComponent, canActivate: [AuthGuard]}
+  {path: 'stuff', component: StuffListComponent, canActivate: [AuthGuard]},
+  {path: 'employees', component:EmployeeListComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({

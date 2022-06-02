@@ -15,6 +15,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {MenuItem} from 'primeng/api'
+import {InputTextModule} from 'primeng/inputtext';
+import { EmployeeListComponent } from './employees/components/employee-list/employee-list.component'; //api
+
 
 
 @NgModule({
@@ -24,10 +29,12 @@ import {MatInputModule} from '@angular/material/input';
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    StuffListComponent
+    StuffListComponent,
+    EmployeeListComponent
   ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         HttpClientModule,
         TableModule,
@@ -36,7 +43,9 @@ import {MatInputModule} from '@angular/material/input';
         FormsModule,
         MatCardModule,
         MatFormFieldModule,
-        MatInputModule
+        MatInputModule,
+        AccordionModule,
+        InputTextModule
     ],
   providers: [],
   bootstrap: [AppComponent]

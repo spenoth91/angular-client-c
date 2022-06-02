@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AccountService} from './account/component/services/account.service';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,14 @@ import {AccountService} from './account/component/services/account.service';
 })
 export class AppComponent {
 
-  constructor(private auth: AccountService) {}
+  constructor(private auth: AccountService,private primengConfig: PrimeNGConfig) {}
 
   public isLoggedIn() {
     return this.auth.isLoggedIn();
+  }
+
+  ngOnInit() {
+    this.primengConfig.ripple = true;
   }
 
   public logout() {
