@@ -1,7 +1,11 @@
 <p-table [value]="employees">
   <ng-template pTemplate="header">
     <tr>
-      <th>id</th>
+      <th>Full Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Nationality</th>
       <th>isTeamLeader</th>
       <th>Department</th>
       <th>Salary</th>
@@ -9,7 +13,11 @@
   </ng-template>
   <ng-template pTemplate="body" let-employee>
     <tr>
-      <td>{{employee.id}}</td>
+      <td>{{employee.fullName}}</td>
+      <td>{{employee.address}}</td>
+      <td>{{employee.email}}</td>
+      <td>{{employee.phone}}</td>
+      <td>{{employee.nationality}}</td>
       <td>{{employee.isTeamLeader}}</td>
       <td>{{employee.department}}</td>
       <td>{{employee.salary}}</td>

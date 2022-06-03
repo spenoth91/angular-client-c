@@ -9,7 +9,7 @@ export class APIEndpointURLs {
 
   //Employee
   public static readonly employeeUrl = APIEndpointURLs.baseUrl + '/employee';
-  public static readonly allEmployee = APIEndpointURLs.employeeUrl + '/all';
+  public static readonly allEmployee = APIEndpointURLs.employeeUrl + '/all-emp-pers';
   public static readonly employee = APIEndpointURLs.employeeUrl + '/id/';
   // Auth
   public static readonly authUrl = APIEndpointURLs.baseUrl + '/auth';
