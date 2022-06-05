@@ -1,6 +1,6 @@
 export class Employee {
   employeeID: number;
-  isTeamLeader: number;
+  teamLeader: boolean;
   department: string;
   salary: string;
   nationality: string;

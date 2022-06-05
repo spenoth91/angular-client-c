@@ -22,7 +22,7 @@ import { EmployeeListComponent } from './employees/components/employee-list/empl
 import { CreateEmployeeComponent } from './employees/components/create-employee/create-employee.component';
 import { UpdateEmployeeComponent } from './employees/components/update-employee/update-employee.component';
 import { EmployeeDetailsComponent } from './employees/components/employee-details/employee-details.component'; //api
-
+import { CommonModule } from "@angular/common";
 
 
 @NgModule({
@@ -51,7 +51,8 @@ import { EmployeeDetailsComponent } from './employees/components/employee-detail
         MatFormFieldModule,
         MatInputModule,
         AccordionModule,
-        InputTextModule
+        InputTextModule,
+        CommonModule
     ],
   providers: [],
   bootstrap: [AppComponent]

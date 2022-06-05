@@ -19,7 +19,15 @@
       <td>{{employee.email}}</td>
       <td>{{employee.phone}}</td>
       <td>{{employee.nationality}}</td>
-      <td>{{employee.isTeamLeader}}</td>
+      <td>
+        <div *ngIf="employee.teamLeader == true; else templateName">
+          <i class="pi pi-check" ></i>
+        </div>
+        
+        <ng-template #templateName>
+          <i class="pi pi-times"></i>
+        </ng-template>
+      </td>
       <td>{{employee.department}}</td>
       <td>{{employee.salary}}</td>
       <td>
@@ -30,3 +38,4 @@
     </tr>
   </ng-template>
 </p-table>
+

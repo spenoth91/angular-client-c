@@ -3,6 +3,8 @@ import { Employee} from '../../models/employee.model';
 import {Observable, Subscription} from 'rxjs';
 import {EmployeeService} from '../../services/employee.service';
 import {Router} from '@angular/router';
+import { CommonModule } from "@angular/common";
+
 
 @Component({
   selector: 'app-employee-list',
@@ -44,6 +46,20 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
         },
         error => console.log(error));
   }
+
+  // getIconByItemState(item, color: boolean = false): string {
+  //   switch(item?.State) {
+  //     case 'Successful': {
+  //       return !color ? 'check circle icon' : 'pi pi-check';
+  //     }
+  //     case 'Faulted': {
+  //       return !color ? 'error icon' : 'pi pi-times';
+  //     }
+  //     default: {
+  //       return 'pi pi-times';
+  //     }
+  //   }
+  // }
 
 
 
