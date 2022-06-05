@@ -9,6 +9,7 @@
       <th>isTeamLeader</th>
       <th>Department</th>
       <th>Salary</th>
+      <th>Action</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-employee>
@@ -21,6 +22,11 @@
       <td>{{employee.isTeamLeader}}</td>
       <td>{{employee.department}}</td>
       <td>{{employee.salary}}</td>
+      <td>
+        <button (click) = "updateEmployee(employee.emp_id)" class = "btn btn-primary"> Update</button>
+        <button (click) = "deleteEmployee(employee.emp_id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+        <button (click) = "employeeDetails(employee.emp_id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+      </td>
     </tr>
   </ng-template>
 </p-table>

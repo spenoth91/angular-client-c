@@ -1,4 +1,5 @@
 export class Employee {
+  emp_id: number;
   isTeamLeader: number;
   department: string;
   salary: string;

@@ -4,6 +4,7 @@
     <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
     <a *ngIf="!isLoggedIn()" class="nav-item nav-link" routerLink="/login" routerLinkActive="active">Login</a>
     <a *ngIf="isLoggedIn()" class="nav-item nav-link" routerLink="/employees" routerLinkActive="active">Employees</a>
+    <a routerLink="create-employee" routerLinkActive="active" class="nav-link" >Add Employee</a>
     <a *ngIf="isLoggedIn()" class="nav-item nav-link" routerLink="/stuff" routerLinkActive="active">Stuff</a>
     <a *ngIf="isLoggedIn()" class="nav-item nav-link" (click)="logout()"  routerLinkActive="active">Logout</a>
   </div>

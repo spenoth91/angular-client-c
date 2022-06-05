@@ -18,7 +18,10 @@ import {MatInputModule} from '@angular/material/input';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {MenuItem} from 'primeng/api'
 import {InputTextModule} from 'primeng/inputtext';
-import { EmployeeListComponent } from './employees/components/employee-list/employee-list.component'; //api
+import { EmployeeListComponent } from './employees/components/employee-list/employee-list.component';
+import { CreateEmployeeComponent } from './employees/components/create-employee/create-employee.component';
+import { UpdateEmployeeComponent } from './employees/components/update-employee/update-employee.component';
+import { EmployeeDetailsComponent } from './employees/components/employee-details/employee-details.component'; //api
 
 
 
@@ -30,7 +33,10 @@ import { EmployeeListComponent } from './employees/components/employee-list/empl
     HomeComponent,
     RegisterComponent,
     StuffListComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    CreateEmployeeComponent,
+    UpdateEmployeeComponent,
+    EmployeeDetailsComponent
   ],
     imports: [
         BrowserModule,
