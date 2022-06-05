@@ -20,32 +20,8 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.subscription = this.employeeService.getAllEmployee().subscribe(data => this.employees = data);
-
-  }
-  // getEmployee(id: string): void {
-  //   this.employeeService.get(id)
-  //     .subscribe(
-  //       data => {
-  //         this.employee = data;
-  //         console.log(data);
-  //       },
-  //       error => {
-  //         console.log(error);
-  //       });
-  // }
-  deleteEmployee(emp_id:number) {
-    this.employeeService.deleteEmployee(emp_id)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.deleteMessage=true;
-          this.employeeService.getAllEmployee().subscribe(data =>{
-            this.employees =data
-          })
-
-        },
-        error => console.log(error));
+    this.subscription = this.employeeService.getAllEmployee().subscribe(data => {this.employees = data;
+    console.log(data);})
   }
 
 
@@ -56,6 +32,20 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
   updateEmployee(id: number){
     this.router.navigate(['update-employee', id]);
   }
+
+  deleteEmployee(emp_id:number) {
+    this.employeeService.deleteEmployee(emp_id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.deleteMessage = true;
+          this.employees = this.employees.filter(e=>e.employeeID!==emp_id)
+
+        },
+        error => console.log(error));
+  }
+
+
 
   ngOnDestroy(): void {
     if (this.subscription) {

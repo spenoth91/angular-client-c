@@ -1,22 +1,29 @@
-img.bg {
-  /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 1024px;
+/*img.bg {*/
+/*  !* Set rules to fill background *!*/
+/*  min-height: 100%;*/
+/*  min-width: 1024px;*/
 
-  /* Set up proportionate scaling */
-  width: 100%;
-  height:100vh;  /* responsive height */
+/*  !* Set up proportionate scaling *!*/
+/*  width: 100%;*/
+/*  height:100vh;  !* responsive height *!*/
 
 
-  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+/*  !* Set up positioning *!*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*}*/
 
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
-  img.bg {
-    left: 50%;
-    margin-left: -512px;   /* 50% */
-  }
+/*@media screen and (max-width: 1024px) { !* Specific to this particular image *!*/
+/*  img.bg {*/
+/*    left: 50%;*/
+/*    margin-left: -512px;   !* 50% *!*/
+/*  }*/
+/*}*/
+body {
+  height: 100vh;
+  background-image: url("../../assets/images/empmanag.png");
+  background-size: 100%;
+  background-size: cover;
+
 }
