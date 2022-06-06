@@ -3,16 +3,15 @@
         <div class="wrapper fadeInDown">
         <h1>Login</h1>
         <br>
-          <div [formGroup]="form" (ngSubmit)="onSubmit()" id="formContent">
-
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" id="formContent">
             <input type="text" id="login" class="fadeIn first" formControlName="email" name="login" placeholder="email">
             <input type="password" id="password" class="fadeIn second" formControlName="password" name="login" placeholder="password">
             <br>
-              <button [disabled]="!form.valid" class="btn btn-primary">
+              <button [disabled]="!form.valid" id="btn-custom" class="btn btn-primary">
                 Login
               </button>
               <a routerLink="../register" class="btn btn-link">Register</a>
-            </div>
+            </form>
           </div>
         </div>
 </body>

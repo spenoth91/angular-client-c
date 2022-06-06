@@ -2,7 +2,7 @@
   <div id="regContainer" class="topMargin">
     <div class="wrapper fadeInDown">
       <h1 >Register</h1>
-      <div [formGroup]="form" (ngSubmit)="onSubmit()" id="formContent">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" id="formContent">
         <br>
               <input type="text" formControlName="firstName" class="fadeIn first" placeholder="First Name" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
               <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
@@ -34,7 +34,7 @@
                 Register
               </button>
               <a routerLink="../login" class="btn btn-link">Cancel</a>
-          </div>
+          </form>
         </div>
       </div>
 

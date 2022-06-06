@@ -1,6 +1,6 @@
 body{
   height: 100vh;
-  background-image: url("../../../../assets/images/login_background.jpg");
+  background-image: url("../../../../assets/images/employeemanag.jpeg");
   background-size: 100%;
   background-size: cover;
 
@@ -37,6 +37,11 @@ h1 {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+#btn-custom{
+  margin-top:10px;
+  margin-right: 30px;
 }
 
 .wrapper {

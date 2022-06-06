@@ -20,7 +20,7 @@
       <td>{{employee.phone}}</td>
       <td>{{employee.nationality}}</td>
       <td>
-        <div *ngIf="employee.teamLeader == true; else templateName">
+        <div *ngIf="employee.teamLeader; else templateName">
           <i class="pi pi-check" ></i>
         </div>
 

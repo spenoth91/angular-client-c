@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.user.firstName = <string>localStorage.getItem('firstName');
-    this.user.lastName = <string>localStorage.getItem('lastName');
+    // this.user.firstName = <string>localStorage.getItem('firstName');
+    // this.user.lastName = <string>localStorage.getItem('lastName');
   }
 
 

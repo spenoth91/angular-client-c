@@ -5,7 +5,6 @@ import { first } from 'rxjs/operators';
 import {AccountService} from '../services/account.service';
 
 @Component({
-  selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })export class RegisterComponent implements OnInit {
@@ -26,8 +25,7 @@ import {AccountService} from '../services/account.service';
       lastName: ['', Validators.required],
       email: ['', Validators.required],
       phone: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      role: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
@@ -39,6 +37,7 @@ import {AccountService} from '../services/account.service';
 
     // stop here if form is invalid
     if (this.form.invalid) {
+      console.log("asd");
       return;
     }
 
