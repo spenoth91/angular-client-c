@@ -2,22 +2,22 @@
   <ng-template pTemplate="header">
     <tr>
       <th>Full Name</th>
-      <th>Address</th>
+<!--      <th>Address</th>-->
       <th>Email</th>
-      <th>Phone</th>
+<!--      <th>Phone</th>-->
       <th>Nationality</th>
       <th>isTeamLeader</th>
       <th>Department</th>
-      <th>Salary</th>
+<!--      <th>Salary</th>-->
       <th>Action</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-employee>
     <tr>
       <td>{{employee.fullName}}</td>
-      <td>{{employee.address}}</td>
+<!--      <td>{{employee.address}}</td>-->
       <td>{{employee.email}}</td>
-      <td>{{employee.phone}}</td>
+<!--      <td>{{employee.phone}}</td>-->
       <td>{{employee.nationality}}</td>
       <td>
         <div *ngIf="employee.teamLeader; else templateName">
@@ -29,11 +29,30 @@
         </ng-template>
       </td>
       <td>{{employee.department}}</td>
-      <td>{{employee.salary}}</td>
+<!--      <td>{{employee.salary}}</td>-->
       <td>
         <button (click) = "updateEmployee(employee.employeeID)" class = "btn btn-primary"> Update</button>
         <button (click) = "deleteEmployee(employee.employeeID)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
-        <button (click) = "employeeDetails(employee.employeeID)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+<!--        <button (click) = "employeeDetails(employee.employeeID)" class = "btn btn-primary" style="margin-left: 10px"> View</button>-->
+        <button [class.selected]="employee === selectedEmplyoee" class = "btn btn-primary" style="margin-left: 10px" (click)="onSelect(employee)" >Sensitive Data</button>
+        <p-dialog position="bottom-right" [(visible)]="geeks"
+                  [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}" >
+          <ng-template pTemplate="header">
+            <h2>View Sensitive Data of {{selectedEmplyoee.fullName}}</h2>
+          </ng-template>
+          <div *ngIf="selectedEmplyoee">
+          <h3> Address: {{selectedEmplyoee.address}}</h3>
+            <h3>Phone: {{selectedEmplyoee.phone}}</h3>
+            <h3>Salary: {{selectedEmplyoee.salary}} $</h3>
+          </div>
+          <ng-template pTemplate="footer">
+            <h4> All right reserved ©</h4>
+          </ng-template>
+
+
+
+
+        </p-dialog>
       </td>
     </tr>
   </ng-template>

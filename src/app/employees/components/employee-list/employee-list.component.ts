@@ -4,6 +4,7 @@ import {Observable, Subscription} from 'rxjs';
 import {EmployeeService} from '../../services/employee.service';
 import {Router} from '@angular/router';
 import { CommonModule } from "@angular/common";
+import {PrimeNGConfig} from 'primeng/api';
 
 
 @Component({
@@ -19,13 +20,17 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
 
 
   constructor(private employeeService: EmployeeService,
-              private router: Router) { }
+              private router: Router,
+              private primengConfig: PrimeNGConfig) { }
 
   ngOnInit(): void {
+    this.primengConfig.ripple = true;
+
     this.subscription = this.employeeService.getAllEmployee().subscribe(data => {this.employees = data;
     console.log(data);})
   }
-
+  geeks: boolean;
+  selectedEmplyoee?:Employee;
 
   employeeDetails(id: number){
     this.router.navigate(['employee-details', id]);
@@ -45,6 +50,11 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
 
         },
         error => console.log(error));
+  }
+  onSelect(employee: Employee): void {
+    this.selectedEmplyoee = employee;
+    this.geeks = true;
+
   }
 
   // getIconByItemState(item, color: boolean = false): string {
