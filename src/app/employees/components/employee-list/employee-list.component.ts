@@ -4,13 +4,14 @@ import {Observable, Subscription} from 'rxjs';
 import {EmployeeService} from '../../services/employee.service';
 import {Router} from '@angular/router';
 import { CommonModule } from "@angular/common";
-import {PrimeNGConfig} from 'primeng/api';
+import {MessageService, PrimeNGConfig} from 'primeng/api';
 
 
 @Component({
   selector: 'app-employee-list',
   templateUrl: 'employee-list.component.html',
-  styleUrls: ['employee-list.component.css']
+  styleUrls: ['employee-list.component.css'],
+  providers:[MessageService]
 })
 export class EmployeeListComponent implements OnInit,OnDestroy {
   employees: Employee[];
@@ -21,7 +22,8 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
 
   constructor(private employeeService: EmployeeService,
               private router: Router,
-              private primengConfig: PrimeNGConfig) { }
+              private primengConfig: PrimeNGConfig,
+              private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.primengConfig.ripple = true;
@@ -46,6 +48,7 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
         data => {
           console.log(data);
           this.deleteMessage = true;
+          this.messageService.add({severity:'success', summary: 'Deleted', detail: 'Your Employee was successfully deleted!'});
           this.employees = this.employees.filter(e=>e.employeeID!==emp_id)
 
         },
