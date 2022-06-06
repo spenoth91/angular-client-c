@@ -3,8 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AccountService} from '../services/account.service';
 
-@Component({ templateUrl: 'login.component.html' })
-export class LoginComponent implements OnInit {
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})export class LoginComponent implements OnInit {
   public loginValid = true;
   public email = '';
   public password = '';

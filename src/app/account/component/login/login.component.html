@@ -1,27 +1,20 @@
-<mat-card>
-  <mat-card-content>
-    <div class="card">
-      <h4 class="card-header">Login</h4>
-      <div class="card-body">
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" formControlName="email" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" formControlName="password" class="form-control" />
-          </div>
-          <div class="form-group">
-            <button [disabled]="!form.valid" class="btn btn-primary">
-              Login
-            </button>
-            <a routerLink="../register" class="btn btn-link">Register</a>
-          </div>
-        </form>
-      </div>
-    </div>
+<body >
+      <div id="loginContainer" class="topMargin">
+        <div class="wrapper fadeInDown">
+        <h1>Login</h1>
+        <br>
+          <div [formGroup]="form" (ngSubmit)="onSubmit()" id="formContent">
 
-  </mat-card-content>
-</mat-card>
+            <input type="text" id="login" class="fadeIn first" formControlName="email" name="login" placeholder="email">
+            <input type="password" id="password" class="fadeIn second" formControlName="password" name="login" placeholder="password">
+            <br>
+              <button [disabled]="!form.valid" class="btn btn-primary">
+                Login
+              </button>
+              <a routerLink="../register" class="btn btn-link">Register</a>
+            </div>
+          </div>
+        </div>
+</body>
+
 
