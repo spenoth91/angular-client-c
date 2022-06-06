@@ -23,6 +23,14 @@ import { CreateEmployeeComponent } from './employees/components/create-employee/
 import { UpdateEmployeeComponent } from './employees/components/update-employee/update-employee.component';
 import { EmployeeDetailsComponent } from './employees/components/employee-details/employee-details.component'; //api
 import { CommonModule } from "@angular/common";
+import {ToastModule} from 'primeng/toast';
+import {SidebarModule} from 'primeng/sidebar';
+import {CardModule} from 'primeng/card';
+import {DynamicDialogModule} from 'primeng/dynamicdialog';
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+
 
 
 @NgModule({
@@ -38,22 +46,29 @@ import { CommonModule } from "@angular/common";
     UpdateEmployeeComponent,
     EmployeeDetailsComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        HttpClientModule,
-        TableModule,
-        ReactiveFormsModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        MatCardModule,
-        MatFormFieldModule,
-        MatInputModule,
-        AccordionModule,
-        InputTextModule,
-        CommonModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    TableModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    AccordionModule,
+    InputTextModule,
+    CommonModule,
+    ToastModule,
+    SidebarModule,
+    CardModule,
+    DynamicDialogModule,
+    ButtonModule,
+    DialogModule,
+    ConfirmDialogModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
