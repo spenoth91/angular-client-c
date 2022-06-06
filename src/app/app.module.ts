@@ -30,6 +30,7 @@ import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {MessagesModule} from 'primeng/messages';
 
 
 
@@ -67,7 +68,8 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     DynamicDialogModule,
     ButtonModule,
     DialogModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    MessagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

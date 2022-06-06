@@ -4,26 +4,27 @@ import {Observable, Subscription} from 'rxjs';
 import {EmployeeService} from '../../services/employee.service';
 import {Router} from '@angular/router';
 import { CommonModule } from "@angular/common";
-import {MessageService, PrimeNGConfig} from 'primeng/api';
+import {ConfirmationService, Message, MessageService, PrimeNGConfig} from 'primeng/api';
 
 
 @Component({
   selector: 'app-employee-list',
   templateUrl: 'employee-list.component.html',
   styleUrls: ['employee-list.component.css'],
-  providers:[MessageService]
+  providers:[ConfirmationService]
 })
 export class EmployeeListComponent implements OnInit,OnDestroy {
   employees: Employee[];
   employee:Employee;
   private subscription: Subscription;
   deleteMessage=false;
+  msgs: Message[] = [];
 
 
   constructor(private employeeService: EmployeeService,
               private router: Router,
               private primengConfig: PrimeNGConfig,
-              private messageService: MessageService) { }
+              private confirmationService: ConfirmationService) { }
 
   ngOnInit(): void {
     this.primengConfig.ripple = true;
@@ -48,11 +49,25 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
         data => {
           console.log(data);
           this.deleteMessage = true;
-          this.messageService.add({severity:'success', summary: 'Deleted', detail: 'Your Employee was successfully deleted!'});
+          //this.messageService.add({severity:'success', summary: 'Deleted', detail: 'Your Employee was successfully deleted!'});
           this.employees = this.employees.filter(e=>e.employeeID!==emp_id)
 
         },
         error => console.log(error));
+  }
+  confirm2(emp_id) {
+    this.confirmationService.confirm({
+      message: 'Are you sure you want to delete this Employee?',
+      header: 'Delete Confirmation',
+      icon: 'pi pi-trash',
+      accept: () => {
+        this.msgs = [{severity:'warn', summary:'Deleted!', detail:'Your Employee was successfully deleted!'}];
+        this.deleteEmployee(emp_id);
+      },
+      reject: () => {
+        this.msgs = [{severity:'error', summary:'Rejected', detail:'You have rejected'}];
+      }
+    });
   }
   onSelect(employee: Employee): void {
     this.selectedEmplyoee = employee;
