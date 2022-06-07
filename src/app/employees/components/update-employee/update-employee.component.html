@@ -1,64 +1,40 @@
-<div class="row">
-  <div class="card col-md-6 offset-md-3 offset-md-3">
-    <div class="row">
-      <h3 class="text-center"> Update Employee </h3>
-      <hr />
-      <div class="card-body">
-        <form (ngSubmit)="onSubmit()">
+<body>
+<div id="updateContainer" class="topMargin">
+  <div class="wrapper fadeInDown">
+    <h1 >Update Employee</h1>
+    <form (ngSubmit)="onSubmit()" id="formContent">
+      <label> Full Name</label>
+      <input type="text"  class="fadeIn first" id="fullName" [(ngModel)]="employee.person.fullName"/>
 
-          <div class="form-group">
-            <label> Full Name</label>
-            <input type="text" class="form-control" id="fullName" [(ngModel)]="employee.person.fullName"
-                   name="fullName">
-          </div>
+      <label> Address</label>
+      <input type="text"  class="fadeIn second" id="address" [(ngModel)]="employee.person.address" name="address" />
 
-          <div class="form-group">
-            <label> Address</label>
-            <input type="text" class="form-control" id="address" [(ngModel)]="employee.person.address"
-                   name="address">
-          </div>
+      <label> Email</label>
+      <input type="text"  class="fadeIn third" id="email" [(ngModel)]="employee.person.email" name="email" />
 
-          <div class="form-group">
-            <label> Email</label>
-            <input type="text" class="form-control" id="email" [(ngModel)]="employee.person.email"
-                   name="email">
-          </div>
 
-          <div class="form-group">
-            <label> Phone</label>
-            <input type="text" class="form-control" id="phone" [(ngModel)]="employee.person.phone"
-                   name="phone">
-          </div>
+      <label> Phone</label>
+      <input type="text"  class="fadeIn fourth"id="phone" [(ngModel)]="employee.person.phone" name="phone"  />
 
-          <div class="form-group">
-            <label> Nationality</label>
-            <input type="text" class="form-control" id="nationality" [(ngModel)]="employee.person.nationality"
-                   name="nationality">
-          </div>
+      <label> Nationality</label>
+      <input type="text" class="fadeIn fifth" id="nationality" [(ngModel)]="employee.person.nationality" name="nationality" />
 
-          <div class="form-group">
-            <label> Salary</label>
-            <input type="text" class="form-control" id="salary" [(ngModel)]="employee.salary"
-                   name="salary">
-          </div>
+      <label> Salary</label>
+      <input type="text" class="fadeIn sixth" id="salary" [(ngModel)]="employee.salary" name="salary" />
 
-          <div class="form-group">
-            <label> Department</label>
-            <input type="text" class="form-control" id="department" [(ngModel)]="employee.department"
-                   name="department">
-          </div>
+      <label> Department</label>
+      <input type="text" class="fadeIn seventh" id="department" [(ngModel)]="employee.department" name="department" />
 
-          <div class="form-group">
-            <label> is Team Leader</label>
-            <input type="boolean" class="form-control" id="TeamLeader" [(ngModel)]="employee.teamLeader"
-                   name="TeamLeader">
-          </div>
+      <label> Is Team Leader</label>
+      <input type="text" class="fadeIn eight" id="TeamLeader" [(ngModel)]="employee.teamLeader" name="teamLeader" />
 
-          <br />
-          <button class="btn btn-success" type="submit">Submit</button>
+      <button class="btn btn-success" type="submit">Submit</button>
 
-        </form>
-      </div>
-    </div>
+    </form>
   </div>
 </div>
+
+</body>
+
+
+
