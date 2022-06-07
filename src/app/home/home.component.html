@@ -1,4 +1,25 @@
 <body>
+<p-card header="Develop your people, scale your business" [style]="{'width': '25rem', 'margin-bottom': '2em','margin-left': '2em'}">
+  The world is evolving fast. With an enterprise management cloud you can build your business to adapt to what’s next.
+  <p></p>
+</p-card>
+
+<p-card header="Speed up your HR processes" [style]="{'width': '25rem','margin-left': '2em','margin-top': '4em'}" styleClass="p-card-shadow">
+  Free your team from the repetitive manual tasks and endless email threads, so they can focus on goals and create real impact:
+  <ul>
+    <li>Automate your hiring process </li>
+    <li>Real-time dates about your employee</li>
+    <li>We help you solve your greatest business challenges.</li>
+  </ul>
+  <h5 *ngIf="!isLoggedIn()" [style]="{'margin-left':'1em'}">
+    Ready to talk?
+    Get in touch with us.
+  </h5>
+  <ng-template pTemplate="footer">
+    <p-button label="Sign In" *ngIf="!isLoggedIn()" routerLink="login" icon="pi pi-sign-in" [style]="{'margin-left': '2.5em'}"></p-button>
+    <p-button label="Sign Up" *ngIf="!isLoggedIn()" routerLink="register" icon="pi pi-plus-circle" styleClass="p-button-secondary" [style]="{'margin-left': '2.5em'}"></p-button>
+  </ng-template>
+</p-card>
 <div>
 <!--  <h1> {{'Welcome, ' +user.firstName + " " + user.lastName }} ! </h1>-->
 </div>

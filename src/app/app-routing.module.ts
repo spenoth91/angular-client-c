@@ -14,7 +14,7 @@ import {UpdateEmployeeComponent} from './employees/components/update-employee/up
 const routes: Routes = [
   {path: 'users', component: UserListComponent, canActivate: [AuthGuard]},
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-  {path: '', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'stuff', component: StuffListComponent, canActivate: [AuthGuard]},
