@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     // this.user.firstName = <string>localStorage.getItem('firstName');
     // this.user.lastName = <string>localStorage.getItem('lastName');
+      this.user = JSON.parse(sessionStorage.getItem('user'));
+
   }
   public isLoggedIn() {
     return this.auth.isLoggedIn();

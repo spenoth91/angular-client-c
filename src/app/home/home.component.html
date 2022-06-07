@@ -1,10 +1,12 @@
 <body>
-<p-card header="Develop your people, scale your business" [style]="{'width': '25rem', 'margin-bottom': '2em','margin-left': '2em'}">
+<p-card *ngIf="isLoggedIn()" header="Welcome on board!" [style]="{'width': '25rem', 'margin-bottom': '2em','margin-left': '2em'}">
+  Our pleasant greetings go out to you on your arrival, <p id="name">{{" "+user.firstName + " " + user.lastName }} !</p>
+</p-card>
+<p-card *ngIf="!isLoggedIn()" header="Develop your people, scale your business" [style]="{'width': '25rem', 'margin-bottom': '2em','margin-left': '2em'}">
   The world is evolving fast. With an enterprise management cloud you can build your business to adapt to what’s next.
   <p></p>
 </p-card>
-
-<p-card header="Speed up your HR processes" [style]="{'width': '25rem','margin-left': '2em','margin-top': '4em'}" styleClass="p-card-shadow">
+<p-card  *ngIf="!isLoggedIn()"header="Speed up your HR processes" [style]="{'width': '25rem','margin-left': '2em','margin-top': '4em'}" styleClass="p-card-shadow">
   Free your team from the repetitive manual tasks and endless email threads, so they can focus on goals and create real impact:
   <ul>
     <li>Automate your hiring process </li>

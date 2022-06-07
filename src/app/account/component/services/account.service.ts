@@ -33,7 +33,6 @@ export class AccountService {
         const result = response[this.TOKEN];
         if (result) {
           localStorage.setItem(this.TOKEN, result);
-
           // const jwt = new JwtHelperService();
           // const tempUser: User = jwt.decodeToken(localStorage.getItem(this.TOKEN));
           // console.log('tempUser: ', tempUser);

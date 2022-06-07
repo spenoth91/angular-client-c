@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AccountService} from '../services/account.service';
+import {UserService} from '../../../users/services/user.service';
 
 @Component({
   templateUrl: './login.component.html',
@@ -16,7 +17,8 @@ import {AccountService} from '../services/account.service';
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -42,6 +44,12 @@ import {AccountService} from '../services/account.service';
         if (result) {
           this.router.navigate(['/']);
           this.loginValid = true;
+          this.userService.getUserbyEmail(this.f.email.value)
+            .subscribe((user)=>{
+              console.log(user);
+              sessionStorage.setItem('user',JSON.stringify(user));
+              console.log(JSON.stringify(user));
+            });
         }
         this.loginValid = false;
       });

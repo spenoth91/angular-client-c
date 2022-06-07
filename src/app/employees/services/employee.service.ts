@@ -22,12 +22,11 @@ export class EmployeeService {
 
   /**
    * updates the employee personal and work related data.
-   * Some strange bug: person object inside Employee (out of nowhere)
    * @param id id of the user to be updated
-   * @param employee the employee object 
+   * @param employee the employee object
    * @returns An Observable of the response as a JSON object
    */
-  updateEmployee(id: number, employee: Employee): Observable<Object>{
+  updateEmployee(id: number, employee: any): Observable<Object>{
     return this.http.put(`${APIEndpointURLs.updateEmp}/${id}`, employee);
   }
 
@@ -35,8 +34,8 @@ export class EmployeeService {
     return this.http.post(`${APIEndpointURLs.createEmp}`, employee);
   }
 
-  getEmployeeById(id: number): Observable<Employee>{
-    return this.http.get<Employee>(`${APIEndpointURLs.employee}/${id}`);
+  getEmployeeById(id: number): Observable<any>{
+    return this.http.get<any>(`${APIEndpointURLs.employee}/${id}`);
   }
 
   // get(id: any): Observable<Employee> {

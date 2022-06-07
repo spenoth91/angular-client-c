@@ -18,6 +18,10 @@ export class UserService {
     return this.http.get<User[]>(APIEndpointURLs.allUser);
   }
 
+  public getUserbyEmail(email:String){
+    return this.http.get<User>(APIEndpointURLs.getUserbyEmail+email);
+  }
+
   public getMyStuff(): Observable<Stuff[]> {
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + this.auth.getToken()

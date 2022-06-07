@@ -27,3 +27,13 @@ body {
   background-size: cover;
 
 }
+#name{
+  font-size: 1.2rem;
+  font-weight: 600;
+  display:inline-block;
+
+}
+
+.p-card-content {
+  font-size: 1.2rem!important;
+}
