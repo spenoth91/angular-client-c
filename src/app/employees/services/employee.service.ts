@@ -24,7 +24,7 @@ export class EmployeeService {
     return this.http.put(`${APIEndpointURLs.updateEmp}/${id}`, employee);
   }
 
-  createEmployee(employee: Employee): Observable<Object>{
+  createEmployee(employee: { address: string; nationality: string; phone: string; fullName: string; teamLeader: boolean; department: string; salary: string; email: string }): Observable<Object>{
     return this.http.post(`${APIEndpointURLs.createEmp}`, employee);
   }
 

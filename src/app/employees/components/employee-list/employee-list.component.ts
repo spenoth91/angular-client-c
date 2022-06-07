@@ -20,7 +20,6 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
   deleteMessage=false;
   msgs: Message[] = [];
 
-
   constructor(private employeeService: EmployeeService,
               private router: Router,
               private primengConfig: PrimeNGConfig,

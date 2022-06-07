@@ -7,9 +7,16 @@ export class APIEndpointURLs {
   public static readonly user = APIEndpointURLs.userUrl + '/id/';
   public static readonly myStuff = APIEndpointURLs.userUrl + '/stuff';
 
+  //Person
+  public static readonly personUrl = APIEndpointURLs.baseUrl + '/person';
+  public static readonly createPers = APIEndpointURLs.personUrl + '/new';
+  public static readonly updatePers = APIEndpointURLs.personUrl + '/update';
+  public static readonly person = APIEndpointURLs.personUrl + '/id';
+
+
   //Employee
   public static readonly employeeUrl = APIEndpointURLs.baseUrl + '/employee';
-  public static readonly createEmp = APIEndpointURLs.baseUrl + '/new';
+  public static readonly createEmp = APIEndpointURLs.employeeUrl + '/new';
   public static readonly allEmployee = APIEndpointURLs.employeeUrl + '/all-emp-pers';
   public static readonly employee = APIEndpointURLs.employeeUrl + '/id';
   public static readonly deleteEmp = APIEndpointURLs.employeeUrl + '/delete';
