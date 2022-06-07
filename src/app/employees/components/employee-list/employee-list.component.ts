@@ -5,6 +5,7 @@ import {EmployeeService} from '../../services/employee.service';
 import {Router} from '@angular/router';
 import { CommonModule } from "@angular/common";
 import {ConfirmationService, Message, MessageService, PrimeNGConfig} from 'primeng/api';
+import {User} from '../../../users/models/user.model';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
   private subscription: Subscription;
   deleteMessage=false;
   msgs: Message[] = [];
+  user: User = {} as User;
 
   constructor(private employeeService: EmployeeService,
               private router: Router,
@@ -27,6 +29,7 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
 
   ngOnInit(): void {
     this.primengConfig.ripple = true;
+    this.user = JSON.parse(sessionStorage.getItem('user'));
 
     this.subscription = this.employeeService.getAllEmployee().subscribe(data => {this.employees = data;
     console.log(data);})

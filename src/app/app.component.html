@@ -1,12 +1,11 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark">
   <div class="navbar-nav">
     <a  class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-    <a *ngIf="isLoggedIn()" class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+    <a *ngIf="isLoggedIn() && isAdmin()" class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
     <a *ngIf="!isLoggedIn()" class="nav-item nav-link" id="login" routerLink="/login" routerLinkActive="active">Login</a>
     <a *ngIf="!isLoggedIn()" class="nav-item nav-link" id="register" routerLink="/register" routerLinkActive="active">Register</a>
     <a *ngIf="isLoggedIn()" class="nav-item nav-link" routerLink="/employees" routerLinkActive="active">Employees</a>
-    <a *ngIf="isLoggedIn()" class="nav-item nav-link" routerLink="create-employee" routerLinkActive="active" >Add Employee</a>
-    <a *ngIf="isLoggedIn()" class="nav-item nav-link" routerLink="/stuff" routerLinkActive="active">Stuff</a>
+    <a *ngIf="isLoggedIn() && isAdmin()" class="nav-item nav-link" routerLink="create-employee" routerLinkActive="active" >Add Employee</a>
     <a *ngIf="isLoggedIn()" class="nav-item nav-link" id="logout" (click)="logout()"  routerLinkActive="active">Logout</a>
   </div>
 </nav>

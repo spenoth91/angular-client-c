@@ -25,14 +25,20 @@ body {
   background-image: url("../../assets/images/empmanag.png");
   background-size: 100%;
   background-size: cover;
+}
+#name,#role,#role1{
+  font-size: 1.2rem;
+  font-weight: 600;
+  display:inline-block;
+  margin-right: 7px;
 
 }
 #name{
   font-size: 1.2rem;
   font-weight: 600;
   display:inline-block;
-
 }
+
 
 .p-card-content {
   font-size: 1.2rem!important;

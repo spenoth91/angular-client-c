@@ -10,7 +10,7 @@
       <th>isTeamLeader</th>
       <th>Department</th>
 <!--      <th>Salary</th>-->
-      <th>Action</th>
+      <th *ngIf="user.role == 1">Action</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-employee>
@@ -31,7 +31,7 @@
       </td>
       <td>{{employee.department}}</td>
 <!--      <td>{{employee.salary}}</td>-->
-      <td>
+      <td *ngIf="user.role == 1">
         <button (click) = "updateEmployee(employee.employeeID)" class = "btn btn-primary"> Update</button>
         <button (click) = "confirm2(employee.employeeID)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
 <!--        <button (click) = "employeeDetails(employee.employeeID)" class = "btn btn-primary" style="margin-left: 10px"> View</button>-->

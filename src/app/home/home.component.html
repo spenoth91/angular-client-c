@@ -1,6 +1,10 @@
 <body>
 <p-card *ngIf="isLoggedIn()" header="Welcome on board!" [style]="{'width': '25rem', 'margin-bottom': '2em','margin-left': '2em'}">
-  Our pleasant greetings go out to you on your arrival, <p id="name">{{" "+user.firstName + " " + user.lastName }} !</p>
+  Our pleasant greetings go out to you on your arrival, <p id="name">{{" "+user.firstName + " " + user.lastName }} !</p><br>
+  Your role is: <p *ngIf="user.role == 1; else roleUser" id="role">Admin <i class="pi pi-user-plus"></i></p>
+  <ng-template #roleUser>
+    <p id="role1">User <i class="pi pi-user"></i></p>
+  </ng-template>
 </p-card>
 <p-card *ngIf="!isLoggedIn()" header="Develop your people, scale your business" [style]="{'width': '25rem', 'margin-bottom': '2em','margin-left': '2em'}">
   The world is evolving fast. With an enterprise management cloud you can build your business to adapt to what’s next.
