@@ -24,6 +24,9 @@ export class UpdateEmployeeComponent implements OnInit {
     }, error => console.log(error));
   }
 
+  /**
+   * When the submit button is pressed, the new is sent to the employee service, and it should send it to the server
+   */
   onSubmit(){
     this.employeeService.updateEmployee(this.id, this.employee).subscribe( data =>{
         this.goToEmployeeList();
