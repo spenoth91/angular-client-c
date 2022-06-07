@@ -20,6 +20,13 @@ export class EmployeeService {
     return this.http.delete(`${APIEndpointURLs.deleteEmp}/${id}`);
   }
 
+  /**
+   * updates the employee personal and work related data.
+   * Some strange bug: person object inside Employee (out of nowhere)
+   * @param id id of the user to be updated
+   * @param employee the employee object 
+   * @returns An Observable of the response as a JSON object
+   */
   updateEmployee(id: number, employee: Employee): Observable<Object>{
     return this.http.put(`${APIEndpointURLs.updateEmp}/${id}`, employee);
   }

@@ -38,6 +38,10 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
     this.router.navigate(['employee-details', id]);
   }
 
+  /**
+   * Navigates to the update employee page, using the employee id
+   * @param id represents the id of the user
+   */
   updateEmployee(id: number){
     this.router.navigate(['update-employee', id]);
   }
