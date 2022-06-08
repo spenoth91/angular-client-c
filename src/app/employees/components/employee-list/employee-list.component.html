@@ -1,5 +1,14 @@
 <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" ></p-confirmDialog>
-<p-table [value]="employees">
+<p-table #dt [value]="employees" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]"
+         totalRecords="totalRecords" pageLinks="3"
+         [globalFilterFields]="['fullName','email','nationality','department']">
+  <ng-template pTemplate="caption">
+    <div style="text-align: right">
+      <span class="p-input-icon-left ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+                </span>    </div>
+  </ng-template>
   <ng-template pTemplate="header">
     <tr>
       <th>Full Name</th>

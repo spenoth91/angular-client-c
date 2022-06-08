@@ -21,6 +21,8 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
   deleteMessage=false;
   msgs: Message[] = [];
   user: User = {} as User;
+  totalRecords: number;
+
 
   constructor(private employeeService: EmployeeService,
               private router: Router,
@@ -32,7 +34,10 @@ export class EmployeeListComponent implements OnInit,OnDestroy {
     this.user = JSON.parse(sessionStorage.getItem('user'));
 
     this.subscription = this.employeeService.getAllEmployee().subscribe(data => {this.employees = data;
-    console.log(data);})
+      this.totalRecords=data.length;
+      console.log(this.totalRecords);
+      console.log(data);})
+
   }
   geeks: boolean;
   selectedEmplyoee?:Employee;
