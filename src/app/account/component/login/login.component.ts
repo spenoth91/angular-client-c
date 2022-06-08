@@ -44,6 +44,7 @@ import {UserService} from '../../../users/services/user.service';
         if (result) {
           this.router.navigate(['/']);
           this.loginValid = true;
+
           this.userService.getUserbyEmail(this.f.email.value)
             .subscribe((user)=>{
               console.log(user);

@@ -16,7 +16,6 @@ export class AppComponent {
 
 
   ngOnInit() {
-    this.user = JSON.parse(sessionStorage.getItem('user'));
     this.primengConfig.ripple = true;
   }
 
@@ -25,7 +24,7 @@ export class AppComponent {
   }
   public isAdmin(){
     this.user = JSON.parse(sessionStorage.getItem('user'));
-    if((this.user.role)==1){
+    if((this.user?.role)==1){
       return true;
     }
      return false;

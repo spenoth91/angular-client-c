@@ -13,6 +13,7 @@ export class AccountService {
   currentUser: BehaviorSubject<User> = new BehaviorSubject<User>(null);
 
   private readonly TOKEN = 'token';
+  user: User = {} as User;
 
   constructor(private http: HttpClient, private router: Router) {
     const token = localStorage.getItem(this.TOKEN);
@@ -33,16 +34,6 @@ export class AccountService {
         const result = response[this.TOKEN];
         if (result) {
           localStorage.setItem(this.TOKEN, result);
-          // const jwt = new JwtHelperService();
-          // const tempUser: User = jwt.decodeToken(localStorage.getItem(this.TOKEN));
-          // console.log('tempUser: ', tempUser);
-          //
-          // if (tempUser.lastName === 'invalid') {
-          //   localStorage.removeItem(this.TOKEN);
-          //   return false;
-          // }
-          //
-          // this.currentUser.next(tempUser);
           return true;
         } else {
           return false;
@@ -52,6 +43,7 @@ export class AccountService {
 
   logout() {
     localStorage.removeItem(this.TOKEN);
+    localStorage.removeItem(JSON.stringify(this.user));
     // this.currentUser.next(null);
     this.router.navigate(['home']);
   }
